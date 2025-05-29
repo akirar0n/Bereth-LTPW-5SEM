@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <servlet>
+        <servlet-name>CadastroUsuarioServlet</servlet-name>
+        <servlet-class>Bean.CadastroUsuarioServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginUsuarioServlet</servlet-name>
+        <servlet-class>Bean.LoginUsuarioServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeslogarUsuarioServlet</servlet-name>
+        <servlet-class>Bean.DeslogarUsuarioServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AlterarUsuarioServlet</servlet-name>
+        <servlet-class>Bean.AlterarUsuarioServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CadastroUsuarioServlet</servlet-name>
+        <url-pattern>/CadUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginUsuarioServlet</servlet-name>
+        <url-pattern>/LoginUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeslogarUsuarioServlet</servlet-name>
+        <url-pattern>/DeslogarUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AlterarUsuarioServlet</servlet-name>
+        <url-pattern>/AltUsuario</url-pattern>
+    </servlet-mapping>
+</web-app>

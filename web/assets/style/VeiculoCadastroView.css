@@ -1,0 +1,110 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 25 de mai. de 2025, 05:09:41
+    Author     : thiagosilva
+*/
+/* style/form_style.css */
+
+.form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0; /* Borda leve para o container */
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    color: #1d2949;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+/* Estilos para os campos de texto e labels */
+.textfield {
+    margin-bottom: 20px;
+}
+
+.textfield label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    font-size: 1em;
+}
+
+.textfield input[type="text"],
+.textfield input[type="email"],
+.textfield input[type="password"],
+.textfield input[type="number"],
+.textfield input[type="date"],
+.textfield select { /* Adicionado para select */
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura total */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.textfield input:focus,
+.textfield select:focus {
+    border-color: #1d2949; /* Cor da borda ao focar */
+    box-shadow: 0 0 0 3px rgba(29, 41, 73, 0.2); /* Sombra suave ao focar */
+    outline: none; /* Remove o outline padrão do navegador */
+}
+
+/* Estilo para radio buttons (se precisar, embora para categoria eu usei select) */
+.textfield .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaço entre as opções de rádio */
+}
+
+.textfield .radio-options {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as opções quebrem linha */
+    gap: 15px;
+}
+
+.textfield .radio-options input[type="radio"] {
+    margin-right: 5px;
+}
+
+.textfield .radio-options label {
+    display: inline-block; /* Para alinhar o label com o radio */
+    margin-bottom: 0; /* Remove a margem extra do label */
+    font-weight: normal; /* Normaliza o peso da fonte para labels de radio */
+    color: #555;
+}
+
+
+/* Estilo para os botões de ação do formulário */
+.form-actions {
+    display: flex;
+    justify-content: flex-end; /* Alinha os botões à direita */
+    gap: 15px; /* Espaço entre os botões */
+    margin-top: 30px;
+}
+
+/* Reutilizando estilos de mensagem da index.css */
+/* .info-message { ... } */
+/* .success-message { ... } */
+/* .error-message { ... } */
+
+/* Ajustes para o form-container dentro do content-wrapper */
+.content-wrapper .form-container {
+    margin-top: 40px; /* Garante espaço após o cabeçalho */
+    margin-bottom: 40px; /* Garante espaço antes do rodapé */
+}
+

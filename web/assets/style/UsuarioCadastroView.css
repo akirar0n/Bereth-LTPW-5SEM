@@ -1,0 +1,199 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+
+/* Novo estilo para exibir mensagens (se não tiver já no cadastro) */
+.message-display {
+    padding: 10px 20px;
+    margin: 10px auto;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: fit-content;
+    max-width: 80%;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+    /* Cores serão definidas diretamente no HTML para dinamismo (vermelho para erro, verde para sucesso) */
+}
+
+.main-login {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1d2949;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-login > h1 {
+    font-size: 3vw;
+    color: aliceblue;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.left-login-img {
+    width: 35vw;
+    max-width: 500px;
+    height: auto;
+}
+
+.right-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    width: 60%;
+    max-width: 600px; /* Talvez um pouco maior para acomodar mais campos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background-color: #1d2949;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #020205;
+}
+
+.card-login > h1 {
+    color: aliceblue;
+    font-weight: 800;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.form-grid { /* Novo contêiner para organizar os textfields em grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas adaptativas */
+    gap: 15px; /* Espaço entre os itens do grid */
+    width: 100%;
+    margin-bottom: 20px; /* Espaço entre o grid e os botões */
+}
+
+.textfield {
+    width: 100%; /* Ajuste a largura dentro do grid */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0; /* Remove a margem inferior para o grid controlar o espaçamento */
+}
+
+.textfield > label {
+    color: aliceblue;
+    margin-bottom: 8px;
+    align-self: flex-start;
+}
+
+.textfield > input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    color: #09091f;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #0e0e20;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textfield > input::placeholder {
+    color: #777;
+    opacity: 0.7;
+}
+
+/* NOVOS ESTILOS PARA O GRUPO DE RÁDIO BUTTONS */
+.radio-group {
+    /* Herda o estilo base do textfield para o label */
+    margin-top: 10px; /* Espaço adicional para o grupo de rádio */
+    margin-bottom: 20px; /* Ajuste se precisar de mais espaço */
+}
+
+.radio-options {
+    display: flex;
+    gap: 20px; /* Espaço entre os pares de rádio/label */
+    align-items: center; /* Alinha verticalmente o rádio e o label */
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+}
+
+.radio-options input[type="radio"] {
+    /* Estilos básicos para o input radio */
+    width: auto; /* Não ocupa 100% da largura */
+    padding: 0; /* Remove padding extra */
+    margin-right: 5px; /* Espaço entre o rádio e o label */
+    box-shadow: none; /* Remove a sombra do input padrão */
+    background-color: transparent; /* Remove o fundo do input padrão */
+    accent-color: #3498db; /* Cor do rádio button (funciona na maioria dos navegadores modernos) */
+    transform: scale(1.2); /* Aumenta um pouco o tamanho para melhor visualização */
+}
+
+.radio-options label {
+    color: aliceblue; /* Cor do texto do label */
+    cursor: pointer; /* Indica que é clicável */
+    font-size: 1.1em; /* Tamanho da fonte do label */
+    margin-bottom: 0; /* Remove margem inferior que pode ser herdada do .textfield > label */
+}
+
+/* Estilos para os botões de ação */
+.btn-cadastro, .btn-limpar {
+    width: 100%;
+    padding: 15px 10px;
+    margin-top: 15px; /* Espaço acima dos botões */
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: aliceblue;
+    box-shadow: 0px 10px 40px -12px #150e3a;
+    cursor: pointer;
+    transition: letter-spacing 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-cadastro {
+    background-color: #09091f;
+    margin-bottom: 10px; /* Espaço entre os botões */
+}
+
+.btn-cadastro:hover {
+    letter-spacing: 4px;
+    color: #f0f0f0;
+    background-color: #0b0b0f;
+}
+
+.btn-limpar {
+    background-color: #555; /* Uma cor diferente para o botão limpar */
+}
+
+.btn-limpar:hover {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+/* Estilo para o link "Já tem conta?" */
+.card-login p {
+    text-align: center;
+    width: 100%; /* Garante que o parágrafo ocupe a largura para centralizar o texto */
+}
+
+.card-login p a {
+    color: #3498db !important; /* Força a cor do link */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.card-login p a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,268 @@
+body {
+    font-family: 'Verdana', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Um fundo claro para a página principal */
+    color: #333;
+}
+
+/* Header e Navbar */
+header {
+    background-color: #1d2949; /* Cor de fundo da navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky; /* Navbar fixa no topo */
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%; /* Padding lateral para o conteúdo da navbar */
+    max-width: 1200px; /* Largura máxima da navbar */
+    margin: 0 auto; /* Centraliza a navbar */
+}
+
+.logo a {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px; /* Espaço entre os itens do menu */
+}
+
+.nav-links li a {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #a0a0a0; /* Cor ao passar o mouse */
+    border-bottom: 2px solid #a0a0a0;
+}
+
+.nav-auth-buttons {
+    display: flex;
+    gap: 15px; /* Espaço entre os botões de autenticação */
+}
+
+/* Estilos para botões */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    white-space: nowrap; /* Evita que o texto quebre */
+}
+
+.btn-primary {
+    background-color: #09091f; /* Cor primária */
+    color: aliceblue;
+}
+
+.btn-primary:hover {
+    background-color: #0b0b0f;
+    color: #f0f0f0;
+}
+
+.btn-secondary {
+    background-color: #a0a0a0; /* Cor secundária (para Cadastre-se) */
+    color: #1d2949;
+}
+
+.btn-secondary:hover {
+    background-color: #777;
+    color: aliceblue;
+}
+
+.btn-logout { /* Estilo para o botão Sair */
+    background-color: #dc3545; /* Vermelho de perigo */
+    color: white;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+}
+
+.btn-login-nav, .btn-register-nav { /* Usar estes para os botões na nav-auth-buttons */
+    /* Estilos já definidos por .btn, .btn-primary, .btn-secondary */
+}
+
+.btn-add-news { /* Estilo específico para o botão "Cadastrar notícia" */
+    margin-top: 15px; /* Espaço acima do botão */
+    align-self: flex-end; /* Alinha o botão à direita dentro de flex-column */
+    /* Usará as cores de .btn-primary */
+}
+
+.btn-view-details { /* Botão para ver detalhes do carro */
+    background-color: #1d2949;
+    color: aliceblue;
+    padding: 8px 15px;
+    font-size: 0.9em;
+    border-radius: 4px;
+}
+.btn-view-details:hover {
+    background-color: #09091f;
+}
+
+
+/* Mensagens de Boas-Vindas e Alertas */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 20px auto; /* Margem superior e inferior, centraliza o wrapper de conteúdo */
+    padding: 0 20px; /* Padding lateral */
+}
+
+.user-info-section {
+    display: flex;
+    flex-direction: column; /* Para empilhar a mensagem e o botão */
+    align-items: center; /* Centraliza horizontalmente */
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-message, .info-message {
+    padding: 15px 20px;
+    border-radius: 5px;
+    width: 100%; /* Ocupa a largura total do user-info-section */
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px; /* Espaço abaixo da mensagem */
+}
+
+.success-message {
+    background-color: #d4edda; /* Verde claro */
+    color: #155724; /* Verde escuro */
+    border: 1px solid #c3e6cb;
+}
+
+.error-message {
+    background-color: #f8d7da; /* Vermelho claro */
+    color: #721c24; /* Vermelho escuro */
+    border: 1px solid #f5c6cb;
+}
+
+/* Seções da Página (Hero, Destaques, etc.) */
+.hero-section {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(rgba(29, 41, 73, 0.8), rgba(29, 41, 73, 0.8)), url('../img/hero-bg.jpg') no-repeat center center/cover; /* Adicione uma imagem de fundo para o hero */
+    color: aliceblue;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.featured-cars, .about-promo {
+    background-color: #fff;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.featured-cars h2, .about-promo h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1d2949;
+    font-size: 2em;
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Layout responsivo de grid */
+    gap: 30px;
+    justify-content: center;
+}
+
+.car-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.car-item:hover {
+    transform: translateY(-5px);
+}
+
+.car-item img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover; /* Recorta a imagem para preencher o espaço */
+    border-bottom: 1px solid #eee;
+}
+
+.car-item h3 {
+    margin: 15px 0 10px;
+    color: #1d2949;
+    font-size: 1.3em;
+}
+
+.car-item p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.car-item .btn-view-details {
+    margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #1d2949;
+    color: aliceblue;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+/* Responsividade (Menu Hamburguer) */
+.menu-toggle {
+    display: none; /* Esconde por padrão */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}

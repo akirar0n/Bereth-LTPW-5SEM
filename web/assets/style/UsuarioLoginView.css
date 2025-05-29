@@ -1,0 +1,151 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+
+.message-display {
+    padding: 10px 20px;
+    margin: 10px auto;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: fit-content;
+    max-width: 80%;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.main-login {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1d2949;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-login > h1 {
+    font-size: 3vw;
+    color: aliceblue;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.left-login-img {
+    width: 35vw;
+    max-width: 500px;
+    height: auto;
+}
+
+.right-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    width: 60%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background-color: #1d2949;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #020205;
+}
+
+.card-login > h1 {
+    color: aliceblue;
+    font-weight: 800;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+/* Alterações no textfield e seus filhos */
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; REMOVIDO: o label já é flex-start, e o input é 100% */
+    /* justify-content: center; REMOVIDO: não necessário para alinhamento vertical aqui */
+    margin-bottom: 20px; /* Aumentado um pouco o espaço entre os campos */
+}
+
+.textfield > label {
+    color: aliceblue;
+    margin-bottom: 8px; /* Reduzido um pouco o espaço entre o label e o input */
+    /* REMOVIDAS as margens "margin: 15px;" que estavam causando o desalinhamento */
+    /* Garante que o label esteja alinhado com o início do input */
+    align-self: flex-start; /* Garante que o label esteja sempre alinhado ao início */
+}
+
+.textfield > input {
+    width: 100%; /* Definir para 100% da largura do pai */
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    color: #09091f;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #0e0e20;
+    outline: none;
+    box-sizing: border-box; /* ESSENCIAL: Garante que padding e border sejam incluídos na largura total */
+}
+
+.textfield > input::placeholder {
+    color: #777;
+    opacity: 0.7;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 15px 10px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: aliceblue;
+    background-color: #09091f;
+    box-shadow: 0px 10px 40px -12px #150e3a;
+    cursor: pointer;
+    transition: letter-spacing 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    letter-spacing: 4px;
+    color: #f0f0f0;
+    background-color: #0b0b0f;
+    box-shadow: 0px 10px 40px -12px #150e3a;
+}
+
+.links-adicionais {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.links-adicionais a {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.links-adicionais a:hover {
+    color: #f0f0f0;
+    text-decoration: underline;
+}
