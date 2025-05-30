@@ -1,6 +1,7 @@
 create schema berethdb;
 use berethdb;
 
+
 create table usuario(
 	idUsuario int auto_increment,
 	acesso enum("Administrador","Cliente"),
