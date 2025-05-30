@@ -23,7 +23,8 @@
                     <li><a href="catalogo.jsp">Catálogo</a></li>
                     <li><a href="sobre.jsp">Sobre Nós</a></li>
                     <li><a href="contato.jsp">Contato</a></li>
-                    <li><a href="UsuarioAlterarView.jsp">Alterar dados</a></li>
+                    <%-- encaminha para a servlet e dps a servlet encaminha para o jsp--%>
+                    <li><a href="AltUsuario">Alterar dados</a></li>
                 </ul>
                 <div class="nav-auth-buttons">
                     <%
