@@ -16,7 +16,7 @@
         <header>
             <nav class="navbar">
                 <div class="logo">
-                    <a href="index.jsp">Agiliza Veículos</a>
+                    <a href="index.jsp">Bereth</a>
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.jsp">Início</a></li>
