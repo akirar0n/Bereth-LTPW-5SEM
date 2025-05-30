@@ -45,7 +45,8 @@ create table venda(
     parcelas int,
     valor decimal(15,2),
     dataVenda datetime,
-		primary key (id_venda),
+		primary key (idVenda),
         foreign key (idUsuario) references usuario(idUsuario),
         foreign key (idVeiculo) references veiculo(idVeiculo)
+	
 );
