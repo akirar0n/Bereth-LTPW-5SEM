@@ -60,17 +60,31 @@
                 </div>
                 <% }%>
 
-                <form action="CadastrarVeiculoServlet" method="post" class="cadastro-form">
+                <form action="CadVeiculo" method="post" class="cadastro-form">
                     <div class="textfield">
                         <label for="categoriaVeiculo">Categoria do Veículo:</label>
-                        <select id="categoriaVeiculo" name="categoriaVeiculo" required>
-                            <option value="">Selecione a Categoria</option>
-                            <option value="CARRO">Carro</option>
-                            <option value="MOTO">Moto</option>
-                            <option value="CAMINHAO">Caminhão</option>
-                            <option value="ONIBUS">Ônibus</option>
-                            <option value="VAN">Van</option>
+                        <select id="categoriaVeiculo" name="categoriaVeiculo">
+                            <option value="">Selecione o tipo de veículo</option>
+                            <option value="Sedan">Sedan</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Hatch">Hatch</option>
+                            <option value="Picape">Picape</option>
+                            <option value="Minivan">Minivan</option>
+                            <option value="Cupê">Cupê</option>
+                            <option value="Perua">Perua</option>
+                            <option value="Roadster">Roadster</option>
+                            <option value="Utilitario">Utilitário</option>
+                            <option value="Esportiva">Esportiva</option>
+                            <option value="Naked">Naked</option>
+                            <option value="Custom">Custom</option>
+                            <option value="Touring">Touring</option>
+                            <option value="Big_Trail">Big Trail</option>
+                            <option value="Scooter">Scooter</option>
+                            <option value="Ciclomotor">Ciclomotor</option>
+                            <option value="Motocross">Motocross</option>
+                            <option value="Enduro">Enduro</option>
                         </select>
+
                     </div>
 
                     <div class="textfield">

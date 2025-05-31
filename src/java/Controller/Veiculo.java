@@ -13,7 +13,7 @@ import Enuns.CategoriaVeiculo;
 public class Veiculo {
     
     private int idVeiculo;
-    private CategoriaVeiculo categoriaVeiculo;
+    private CategoriaVeiculo categoriaVeiculo; // tipo do veiculo
     private String marca;
     private String modelo;
     private String cor;
