@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cadastrar Veículo - Agiliza Veículos</title>
+        <title>Bereth</title>
         <link rel="stylesheet" href="assets/style/index.css"/> 
         <link rel="stylesheet" href="assets/style/VeiculoCadastroView.css"/>
     </head>
@@ -17,14 +17,14 @@
         <header>
             <nav class="navbar">
                 <div class="logo">
-                    <a href="index.jsp">Agiliza Veículos</a>
+                    <a href="index.jsp">Bereth</a>
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.jsp">Início</a></li>
                     <li><a href="catalogo.jsp">Catálogo</a></li>
                     <li><a href="sobre.jsp">Sobre Nós</a></li>
                     <li><a href="contato.jsp">Contato</a></li>
-                    <li><a href="UsuarioAlterarView.jsp">Alterar dados</a></li>
+                    <li><a href="AltUsuario">Alterar dados</a></li>
                 </ul>
                 <div class="nav-auth-buttons">
                     <%

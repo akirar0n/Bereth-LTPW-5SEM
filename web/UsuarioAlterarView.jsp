@@ -3,10 +3,10 @@
     Created on : 25 de mai. de 2025, 05:15:33
     Author     : thiagosilva
 --%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="Controller.Usuario"%>
-<%@page import="Enuns.Acesso"%>
-<%@page import="java.text.SimpleDateFormat"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ page import="Controller.Usuario" %>
+<%@ page import="Enuns.Acesso" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,7 +26,7 @@
                     <li><a href="catalogo.jsp">Catálogo</a></li>
                     <li><a href="sobre.jsp">Sobre Nós</a></li>
                     <li><a href="contato.jsp">Contato</a></li>
-                    <li><a href="UsuarioAlterarView.jsp">Alterar dados</a></li>
+                    <li><a href="AltUsuario">Alterar dados</a></li>
                 </ul>
                 <div class="nav-auth-buttons">
                     <%
@@ -92,7 +92,7 @@
 
                     <div class="textfield">
                         <label for="nome">Nome Completo:</label>
-                        <input type="text" id="nome" name="nome" value="<%= nome%>" placeholder="Seu nome completo" required>
+                        <input type="text" id="nome" name="nome" value="<%= usuario.getNome()%>" placeholder="Seu nome completo" required>
                     </div>
 
                     <div class="textfield">

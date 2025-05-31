@@ -111,12 +111,22 @@ public class AlterarUsuarioServlet extends HttpServlet {
             boolean sucesso = manterUsuario.alterarUsuario(usuario);
 
             if (sucesso) {
-                response.sendRedirect("UsuarioAlterarView.jsp?mensagem=Usuario%20alterado%20com%20sucesso!");
+                // Atualizar os dados da sessão
+                session.setAttribute("nome", usuario.getNome());
+                session.setAttribute("cpf", usuario.getCpf());
+                session.setAttribute("email", usuario.getEmail());
+                session.setAttribute("rg", usuario.getRg());
+                session.setAttribute("idade", usuario.getIdade());
+                session.setAttribute("nascimento", usuario.getNascimento());
+                session.setAttribute("acesso", usuario.getAcesso());
+
+                response.sendRedirect("AltUsuario?mensagem=Usuario%20alterado%20com%20sucesso!");
             } else {
                 request.setAttribute("mensagemErro", "Erro ao alterar usuário.");
                 request.setAttribute("usuario", usuario);
                 request.getRequestDispatcher("UsuarioAlterarView.jsp").forward(request, response);
             }
+
         }
     }
 
@@ -132,7 +142,24 @@ public class AlterarUsuarioServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        HttpSession session = request.getSession(false);
+
+        if (session == null || session.getAttribute("idUsuario") == null) {
+            response.sendRedirect("UsuarioLoginView.jsp?mensagem=Faça%20login%20novamente");
+            return;
+        }
+
+        int idUsuario = (Integer) session.getAttribute("idUsuario");
+
+        ManterUsuario manterUsuario = new ManterUsuario();
+        Usuario usuario = manterUsuario.buscarIdUsuario(idUsuario);
+
+        if (usuario != null) {
+            request.setAttribute("usuario", usuario);
+            request.getRequestDispatcher("UsuarioAlterarView.jsp").forward(request, response);
+        } else {
+            response.sendRedirect("index.jsp?erro=usuario_nao_encontrado");
+        }
     }
 
     /**
