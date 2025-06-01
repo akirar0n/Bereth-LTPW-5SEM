@@ -9,5 +9,27 @@ package Enuns;
  * @author thiagosilva
  */
 public enum CategoriaVeiculo {
-    Carro, Motocicleta, Caminhão, Outros
+
+    Sedan, 
+    SUV, 
+    Hatch, 
+    Picape, 
+    Minivan, 
+    Cupê, 
+    Perua, 
+    Roadster, 
+    Utilitário, 
+    Esportiva, 
+    Naked, 
+    Custom, 
+    Touring, 
+    Big_Trail,
+    Scooter, 
+    Ciclomotor, 
+    Motocross, 
+    Enduro;
+    
+    public static CategoriaVeiculo fromString(String categoria) {
+        return CategoriaVeiculo.valueOf(categoria.toUpperCase());
+    }
 }
