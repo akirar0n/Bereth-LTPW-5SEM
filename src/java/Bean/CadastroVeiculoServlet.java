@@ -58,7 +58,7 @@ public class CadastroVeiculoServlet extends HttpServlet {
             request.setAttribute("mensagemErro", "Erro ao cadastrar veículo: " + e.getMessage());
         }
 
-        request.getRequestDispatcher("VeiculoListaView.jsp").forward(request, response);
+        request.getRequestDispatcher("VeiculoCadastroView.jsp").forward(request, response);
     }
 
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
