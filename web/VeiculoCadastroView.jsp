@@ -9,7 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Bereth</title>
+        <title>Cadastrar Veículo - Agiliza Veículos</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/antonios-logo.png">
         <link rel="stylesheet" href="assets/style/index.css"/> 
         <link rel="stylesheet" href="assets/style/VeiculoCadastroView.css"/>
     </head>
@@ -17,14 +18,14 @@
         <header>
             <nav class="navbar">
                 <div class="logo">
-                    <a href="index.jsp">Bereth</a>
+                    <a href="index.jsp">Agiliza Veículos</a>
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.jsp">Início</a></li>
                     <li><a href="catalogo.jsp">Catálogo</a></li>
                     <li><a href="sobre.jsp">Sobre Nós</a></li>
                     <li><a href="contato.jsp">Contato</a></li>
-                    <li><a href="AltUsuario">Alterar dados</a></li>
+                    <li><a href="UsuarioAlterarView.jsp">Alterar dados</a></li>
                 </ul>
                 <div class="nav-auth-buttons">
                     <%
@@ -60,31 +61,15 @@
                 </div>
                 <% }%>
 
-                <form action="CadVeiculo" method="post" class="cadastro-form">
+                <form action="${pageContext.request.contextPath}/CadVeiculo" method="post" class="cadastro-form">
                     <div class="textfield">
                         <label for="categoriaVeiculo">Categoria do Veículo:</label>
-                        <select id="categoriaVeiculo" name="categoriaVeiculo">
-                            <option value="">Selecione o tipo de veículo</option>
-                            <option value="Sedan">Sedan</option>
-                            <option value="SUV">SUV</option>
-                            <option value="Hatch">Hatch</option>
-                            <option value="Picape">Picape</option>
-                            <option value="Minivan">Minivan</option>
-                            <option value="Cupê">Cupê</option>
-                            <option value="Perua">Perua</option>
-                            <option value="Roadster">Roadster</option>
-                            <option value="Utilitario">Utilitário</option>
-                            <option value="Esportiva">Esportiva</option>
-                            <option value="Naked">Naked</option>
-                            <option value="Custom">Custom</option>
-                            <option value="Touring">Touring</option>
-                            <option value="Big_Trail">Big Trail</option>
-                            <option value="Scooter">Scooter</option>
-                            <option value="Ciclomotor">Ciclomotor</option>
-                            <option value="Motocross">Motocross</option>
-                            <option value="Enduro">Enduro</option>
-                        </select>
+                        <select id="categoriaVeiculo" name="categoriaVeiculo" required>
+                            <option value="">Selecione a Categoria</option>
+                            <option value="CARRO">Carro</option>
+                            <option value="MOTO">Moto</option>
 
+                        </select>
                     </div>
 
                     <div class="textfield">

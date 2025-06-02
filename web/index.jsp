@@ -10,25 +10,30 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/antonios-logo.png">
         <link rel="stylesheet" href="assets/style/index.css"/>
     </head>
     <body>
         <header>
             <nav class="navbar">
                 <div class="logo">
-                    <a href="index.jsp">Bereth</a>
+                    <img src="assets/img/antonios-logo.png" alt="logotipo" width="50px" height="50px" />
+                    <a href="index.jsp">Agiliza Veículos</a>
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.jsp">Início</a></li>
-                    <li><a href="catalogo.jsp">Catálogo</a></li>
+                    <li><a href="ListaVeiculo">Catálogo</a></li>
                     <li><a href="sobre.jsp">Sobre Nós</a></li>
                     <li><a href="contato.jsp">Contato</a></li>
-                    <%-- encaminha para a servlet e dps a servlet encaminha para o jsp--%>
                     <li><a href="AltUsuario">Alterar dados</a></li>
                 </ul>
                 <div class="nav-auth-buttons">
                     <%
                         boolean logado = session.getAttribute("nome") != null;
+                        Enuns.Acesso acessoUsuario = (Enuns.Acesso) session.getAttribute("acesso");
+
+                        // Verifica se é afmin
+                        boolean isAdmin = logado && (acessoUsuario == Enuns.Acesso.Administrador);
                     %>
 
                     <% if (logado) {%>
@@ -38,27 +43,22 @@
                     <a href="UsuarioCadastroView.jsp" class="btn btn-secondary btn-register-nav">Cadastre-se</a>
                     <%}%>
                 </div>
-                <!-- 
-                <div class="menu-toggle" id="mobile-menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                -->
             </nav>
         </header>
 
         <main class="content-wrapper"> 
             <% if (logado) {%>
             <div class="user-info-section">
-                <p class="welcome-message success-message">Bem vindo, <strong><%=session.getAttribute("nome")%></strong>!</p>
-              
+                <p class="welcome-message success-message">Bem vindo, <strong><%=session.getAttribute("acesso")%></strong>!</p>
+
+                <% if (isAdmin) {%>
                 <a href="VeiculoCadastroView.jsp" data-toggle="modal" data-target="#modalCadastrar" class="btn btn-primary btn-add-news">Cadastrar Veículo</a>
+                <% } %>
             </div>
             <% } else {%>
             <div class="user-info-section">
                 <div class="info-message error-message">
-                    Autentique-se para coisar as coisas!
+                    Autentique-se para ver mais opções!
                 </div>
             </div>
             <% }%>
@@ -66,7 +66,7 @@
             <section class="hero-section">
                 <h1>Encontre o seu veículo ideal</h1>
                 <p>A maior variedade de carros novos e seminovos para você!</p>
-                <a href="catalogo.jsp" class="btn btn-primary">Ver Catálogo</a>
+                <a href="ListaVeiculo" class="btn btn-primary">Ver Catálogo</a>
             </section>
 
             <section class="featured-cars">
