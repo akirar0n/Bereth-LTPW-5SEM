@@ -11,6 +11,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cadastre-se</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/antonios-logo.png">
         <link rel="stylesheet" href="assets/style/UsuarioLoginView.css">
     </head>
 
@@ -38,7 +39,7 @@
         <div class="main-login">
             <div class="left-login">
                 <h1>Entre com sua conta</h1>
-                <img src="assets/img/login-img.svg" class="left-login-img" alt="Ilustração de correção de gramática">
+                <img src="assets/img/antonios-logo.png" class="left-login-img" alt="Ilustração de correção de gramática">
             </div>
             <div class="right-login">
                 <div class="card-login">

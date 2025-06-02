@@ -6,10 +6,10 @@ package Bean;
 
 import Controller.Veiculo;
 import Model.ManterVeiculo;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -19,8 +19,7 @@ import java.util.List;
  *
  * @author thiagosilva
  */
-@WebServlet(name = "ListaVeiculoServlet", urlPatterns = {"/ListVeiculo"})
-public class ListaVeiculoServlet extends HttpServlet {
+public class VeiculoListarServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,7 +34,7 @@ public class ListaVeiculoServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+
             try {
                 ManterVeiculo veiculoDao = new ManterVeiculo();
                 List<Veiculo> lista = veiculoDao.listarVeiculos();
@@ -44,22 +43,21 @@ public class ListaVeiculoServlet extends HttpServlet {
             } catch (Exception e) {
                 request.setAttribute("mensagemErro", "Erro ao listar veículos: " + e.getMessage());
             }
-
-            request.getRequestDispatcher("VeiculoCadastroView.jsp").forward(request, response);
+            request.getRequestDispatcher("VeiculoListaView.jsp").forward(request, response);
+        }
     }
-}
 
-// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-/**
- * Handles the HTTP <code>GET</code> method.
- *
- * @param request servlet request
- * @param response servlet response
- * @throws ServletException if a servlet-specific error occurs
- * @throws IOException if an I/O error occurs
- */
-@Override
-protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -73,7 +71,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response)
      * @throws IOException if an I/O error occurs
      */
     @Override
-protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -84,7 +82,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
      * @return a String containing servlet description
      */
     @Override
-public String getServletInfo() {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
