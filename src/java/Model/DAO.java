@@ -27,7 +27,7 @@ public class DAO {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String url = "jdbc:mysql://localhost/berethdb?useSSL=false&allowPublicKeyRetrieval=true";// em caso de erro, apaga o que vier depois do nome da database.
             String user = "root";
-            String senha = "root"; //verificar
+            String senha = ""; //verificar
             con = (Connection) DriverManager.getConnection(url, user, senha);
             System.out.println("Conectado ao banco de dados ");
         } catch (ClassNotFoundException ex) {

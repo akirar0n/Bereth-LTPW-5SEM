@@ -27,9 +27,16 @@ public enum CategoriaVeiculo {
     Scooter, 
     Ciclomotor, 
     Motocross, 
-    Enduro;
+    Enduro,
+    Carro,
+    Moto;
     
     public static CategoriaVeiculo fromString(String categoria) {
-        return CategoriaVeiculo.valueOf(categoria.toUpperCase());
+    for (CategoriaVeiculo c : CategoriaVeiculo.values()) {
+        if (c.name().equalsIgnoreCase(categoria)) {
+            return c;
+        }
+    }
+    throw new IllegalArgumentException("Categoria inválida: " + categoria);
     }
 }

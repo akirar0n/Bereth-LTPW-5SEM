@@ -22,7 +22,7 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.jsp">Início</a></li>
-                    <li><a href="catalogo.jsp">Catálogo</a></li>
+                    <li><a href="VeiculoListaView.jsp">Catálogo</a></li>
                     <li><a href="sobre.jsp">Sobre Nós</a></li>
                     <li><a href="contato.jsp">Contato</a></li>
                     <li><a href="UsuarioAlterarView.jsp">Alterar dados</a></li>
@@ -66,8 +66,8 @@
                         <label for="categoriaVeiculo">Categoria do Veículo:</label>
                         <select id="categoriaVeiculo" name="categoriaVeiculo" required>
                             <option value="">Selecione a Categoria</option>
-                            <option value="CARRO">Carro</option>
-                            <option value="MOTO">Moto</option>
+                            <option value="Carro">Carro</option>
+                            <option value="Moto">Moto</option>
 
                         </select>
                     </div>

@@ -34,7 +34,7 @@ public class VeiculoCadastroServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        try (PrintWriter out = response.getWriter()) {
+        try {
             Veiculo veiculo = new Veiculo();
             veiculo.setCategoriaVeiculo(CategoriaVeiculo.fromString(request.getParameter("categoriaVeiculo")));
             veiculo.setMarca(request.getParameter("marca"));
@@ -50,9 +50,7 @@ public class VeiculoCadastroServlet extends HttpServlet {
             veiculo.setPlaca(request.getParameter("placa"));
             veiculo.setChassi(request.getParameter("chassi"));
 
-            // Aqui você chamaria a classe DAO para salvar no banco de dados
             ManterVeiculo veiculoDao = new ManterVeiculo();
-            // Agora o retorno de inserirVeiculo será confiável
             boolean inseridoComSucesso = veiculoDao.inserirVeiculo(veiculo);
 
             if (inseridoComSucesso) {
@@ -63,10 +61,9 @@ public class VeiculoCadastroServlet extends HttpServlet {
         } catch (Exception e) {
             request.setAttribute("mensagemErro", "Erro ao cadastrar veículo: " + e.getMessage());
             e.printStackTrace();
-        } finally {
-            request.getRequestDispatcher("ListaVeiculo").forward(request, response);
         }
 
+        request.getRequestDispatcher("ListaVeiculo").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

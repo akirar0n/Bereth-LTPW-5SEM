@@ -19,7 +19,7 @@ public class ManterVeiculo extends DAO {
     public boolean inserirVeiculo(Veiculo veiculo) throws Exception {
         try {
             abrirBanco();
-            String sql = "INSERT INTO veiculo (categoriaVeiculo, marca, modelo, cor, rodas, motorizacao, pesoKg, capacidadeTanque, assentos, anoFabricacao, anoModelo, placa, chassi) "
+            String sql = "INSERT INTO veiculo (categoria, marca, modelo, cor, rodas, motorizacao, pesoKg, capacidadeTanqueL, assentos, anoFabricacao, anoModelo, placa, chassi) "
                     + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             pst = con.prepareStatement(sql);
             pst.setString(1, veiculo.getCategoriaVeiculo().name());
@@ -64,14 +64,14 @@ public class ManterVeiculo extends DAO {
             while (rs.next()) {
                 Veiculo v = new Veiculo();
                 v.setIdVeiculo(rs.getInt("idVeiculo"));
-                v.setCategoriaVeiculo(CategoriaVeiculo.valueOf(rs.getString("categoriaVeiculo")));
+                v.setCategoriaVeiculo(CategoriaVeiculo.valueOf(rs.getString("categoria")));
                 v.setMarca(rs.getString("marca"));
                 v.setModelo(rs.getString("modelo"));
                 v.setCor(rs.getString("cor"));
                 v.setRodas(rs.getInt("rodas"));
                 v.setMotorizacao(rs.getFloat("motorizacao"));
                 v.setPesoKg(rs.getFloat("pesoKg"));
-                v.setCapacidadeTanque(rs.getFloat("capacidadeTanque"));
+                v.setCapacidadeTanque(rs.getFloat("capacidadeTanqueL"));
                 v.setAssentos(rs.getInt("assentos"));
                 v.setAnoFabricacao(rs.getInt("anoFabricacao"));
                 v.setAnoModelo(rs.getInt("anoModelo"));
@@ -91,7 +91,7 @@ public class ManterVeiculo extends DAO {
         try {
             Veiculo veiculo = new Veiculo();
             abrirBanco();
-            String query = "SELECT idVeiculo, categoriaVeiculo, marca, modelo, cor, rodas, motorizacao, pesoKg, capacidadeTanque, assentos, anoFabricacao, anoModelo, placa, chassi FROM veiculo WHERE idVeiculo = ?";
+            String query = "SELECT idVeiculo, categoria, marca, modelo, cor, rodas, motorizacao, pesoKg, capacidadeTanque, assentos, anoFabricacao, anoModelo, placa, chassi FROM veiculo WHERE idVeiculo = ?";
             pst = con.prepareStatement(query);
             pst.setInt(1, idVeiculo);
             ResultSet rs = pst.executeQuery();
@@ -103,7 +103,7 @@ public class ManterVeiculo extends DAO {
                     veiculo.setCategoriaVeiculo(CategoriaVeiculo.valueOf(rs.getString("categoriaVeiculo")));
                 } catch (IllegalArgumentException e) {
                     System.err.println("Categoria inválida para o veículo ID " + idVeiculo + ": '" + rs.getString("categoriaVeiculo") + "'.");
-                    veiculo.setCategoriaVeiculo(CategoriaVeiculo.CARRO); // Valor padrão
+                    veiculo.setCategoriaVeiculo(CategoriaVeiculo.Carro); // Valor padrão
                 }
 
                 veiculo.setMarca(rs.getString("marca"));
