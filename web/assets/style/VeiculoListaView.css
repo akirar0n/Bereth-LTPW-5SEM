@@ -1,0 +1,218 @@
+body {
+    font-family: 'Verdana', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Um fundo claro para a página principal */
+    color: #333;
+}
+
+/* Header e Navbar */
+header {
+    background-color: #1d2949; /* Cor de fundo da navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky; /* Navbar fixa no topo */
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%; /* Padding lateral para o conteúdo da navbar */
+    max-width: 1200px; /* Largura máxima da navbar */
+    margin: 0 auto; /* Centraliza a navbar */
+}
+
+.logo a {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px; /* Espaço entre os itens do menu */
+}
+
+.nav-links li a {
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #a0a0a0; /* Cor ao passar o mouse */
+    border-bottom: 2px solid #a0a0a0;
+}
+
+.page-header {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.page-header h2 {
+    color: #1d2949;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    justify-items: center; /* Centraliza os cards na célula */
+}
+
+.vehicle-card {
+    width: 100%;
+    max-width: 320px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+    width: 100%;
+    height: 180px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Imagem padrão */
+.card-image img[src="assets/img/default-car.png"] {
+    object-fit: contain;
+    padding: 10px;
+}
+
+.card-details {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-details h3 {
+    color: #1d2949;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card-details p {
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.card-details strong {
+    color: #333;
+}
+
+.btn-details {
+    display: block;
+    width: calc(100% - 40px);
+    padding: 10px 15px;
+    margin-top: 15px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+.btn-details:hover {
+    background-color: #0056b3;
+}
+
+.no-vehicles-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.2em;
+    color: #666;
+    padding: 50px 0;
+}
+
+.no-vehicles-message a {
+    color: #1d2949;
+    text-decoration: underline;
+}
+
+.info-message {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.car-btn-edit {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.car-btn-delete {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.admin-buttons {
+    margin-top: 10px;
+}
+

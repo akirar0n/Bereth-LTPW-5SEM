@@ -17,7 +17,7 @@ body {
 .main-login {
     width: 100vw;
     height: 100vh;
-    background-color: #1d2949;
+    background-color: #091d58;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,7 +61,7 @@ body {
     align-items: center;
     flex-direction: column;
     padding: 30px 35px;
-    background-color: #1d2949;
+    background-color: #091d58;
     border-radius: 20px;
     box-shadow: 0px 10px 40px #020205;
 }

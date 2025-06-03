@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastre-se</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/antonios-logo.png">
         <link rel="stylesheet" href="assets/style/UsuarioCadastroView.css">
     </head>
 
@@ -29,10 +30,10 @@
                               <div class="textfield radio-group">
                                 <label>Tipo de Acesso:</label>
                                 <div class="radio-options">
-                                    <input type="radio" id="cliente" name="acesso" value="Cliente" checked>
+                                    <input type="radio" id="Cliente" name="acesso" value="Cliente" checked>
                                     <label for="cliente">Cliente</label>
                                     
-                                    <input type="radio" id="admin" name="acesso" value="Administrador">
+                                    <input type="radio" id="Administrador" name="acesso" value="Administrador">
                                     <label for="admin">Admin</label>
                                 </div>
                             </div>

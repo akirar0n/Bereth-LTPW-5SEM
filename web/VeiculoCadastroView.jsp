@@ -9,7 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Bereth</title>
+        <title>Cadastrar Veículo - Agiliza Veículos</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/antonios-logo.png">
         <link rel="stylesheet" href="assets/style/index.css"/> 
         <link rel="stylesheet" href="assets/style/VeiculoCadastroView.css"/>
     </head>
@@ -17,14 +18,14 @@
         <header>
             <nav class="navbar">
                 <div class="logo">
-                    <a href="index.jsp">Bereth</a>
+                    <a href="index.jsp">Agiliza Veículos</a>
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.jsp">Início</a></li>
                     <li><a href="catalogo.jsp">Catálogo</a></li>
                     <li><a href="sobre.jsp">Sobre Nós</a></li>
                     <li><a href="contato.jsp">Contato</a></li>
-                    <li><a href="AltUsuario">Alterar dados</a></li>
+                    <li><a href="UsuarioAlterarView.jsp">Alterar dados</a></li>
                 </ul>
                 <div class="nav-auth-buttons">
                     <%
@@ -60,16 +61,14 @@
                 </div>
                 <% }%>
 
-                <form action="CadastrarVeiculoServlet" method="post" class="cadastro-form">
+                <form action="${pageContext.request.contextPath}/CadVeiculo" method="post" class="cadastro-form">
                     <div class="textfield">
                         <label for="categoriaVeiculo">Categoria do Veículo:</label>
                         <select id="categoriaVeiculo" name="categoriaVeiculo" required>
                             <option value="">Selecione a Categoria</option>
                             <option value="CARRO">Carro</option>
                             <option value="MOTO">Moto</option>
-                            <option value="CAMINHAO">Caminhão</option>
-                            <option value="ONIBUS">Ônibus</option>
-                            <option value="VAN">Van</option>
+
                         </select>
                     </div>
 
