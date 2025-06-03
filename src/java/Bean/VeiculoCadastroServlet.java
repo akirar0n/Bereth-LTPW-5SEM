@@ -49,6 +49,8 @@ public class VeiculoCadastroServlet extends HttpServlet {
             veiculo.setAnoModelo(Integer.parseInt(request.getParameter("anoModelo")));
             veiculo.setPlaca(request.getParameter("placa"));
             veiculo.setChassi(request.getParameter("chassi"));
+            veiculo.setImagem(request.getParameter("imagem"));
+            veiculo.setPreco(Double.parseDouble(request.getParameter("preco")));
 
             ManterVeiculo veiculoDao = new ManterVeiculo();
             boolean inseridoComSucesso = veiculoDao.inserirVeiculo(veiculo);
