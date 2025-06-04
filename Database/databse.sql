@@ -55,8 +55,48 @@ create table venda(
 	
 );
 
+create table pedidos (
+	id int primary key auto_increment,
+    data_pedido datetime default current_timestamp,
+    valor_total double,
+    idUsuario int not null,
+    foreign key (idUsuario) references usuario(idUsuario)
+    ) Engine = InnoDB;
+    
+create table pedido_veiculo (
+	id_pedido int,
+    idVeiculo int,
+    quantidade int not null,
+    subtotal double,
+    primary key(id_pedido, idVeiculo),
+    foreign key(id_pedido) references pedidos(id),
+    foreign key(idVeiculo) references veiculo(idVeiculo)
+    ) Engine = InnoDB;
+    
+create table carrinho(
+	idUsuario int not null, 
+    idVeiculo int not null,
+    quantidade int not null,
+    primary key(idUsuario, idVeiculo),
+    foreign key(idUsuario) references usuario(idUsuario),
+    foreign key(idVeiculo) references veiculo(idVeiculo)
+) Engine = InnoDB;
+
+
+
 select * from usuario;
+select * from pedidos;
+select * from pedido_veiculo;
 select * from veiculo;
+select * from carrinho;
 
 alter table veiculo add column imagem varchar(700);
 alter table veiculo add column preco double;
+
+SELECT p.id AS pedido_id, p.data_pedido, p.valor_total,
+                   v.modelo AS nome_veiculo, pv.quantidade, pv.subtotal
+            FROM pedidos p
+            JOIN pedido_veiculo pv ON p.id = pv.id_pedido
+            JOIN veiculo v ON pv.idVeiculo = v.idVeiculo
+            WHERE p.idUsuario = 1
+            ORDER BY p.id DESC
