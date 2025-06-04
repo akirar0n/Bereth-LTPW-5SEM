@@ -1,3 +1,4 @@
+drop database berethdb;
 create schema berethdb;
 use berethdb;
 
@@ -18,6 +19,8 @@ create table usuario(
 
 create table veiculo(
 	idVeiculo INT auto_increment,
+    imagem varchar(700),
+    preco double,
 	categoria ENUM("Carro", "Moto"),
 	tipo ENUM("Sedan", "SUV", "Hatch", "Picape", "Minivan", "Cupê",
 			"Perua", "Roadster", "Utilitário","Esportiva", "Naked", 
@@ -51,3 +54,9 @@ create table venda(
         foreign key (idVeiculo) references veiculo(idVeiculo)
 	
 );
+
+select * from usuario;
+select * from veiculo;
+
+alter table veiculo add column imagem varchar(700);
+alter table veiculo add column preco double;
