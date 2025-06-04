@@ -143,8 +143,8 @@ header {
 
 .btn-details {
     display: block;
-    width: calc(100% - 40px);
-    padding: 10px 15px;
+    width: 100px;
+    padding: 6.5px;
     margin-top: 15px;
     background-color: #007bff;
     color: white;

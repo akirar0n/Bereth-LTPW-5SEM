@@ -36,6 +36,7 @@
         <ul class="nav-links">
             <li><a href="index.jsp">Início</a></li>
             <li><a href="VeiculoListaView.jsp">Catálogo</a></li> 
+            <li><a href="CarrinhoView.jsp">Carrinho</a></li> 
             <li><a href="sobre.jsp">Sobre Nós</a></li>
             <li><a href="contato.jsp">Contato</a></li>
             <li><a href="AltUsuario">Alterar dados</a></li>
@@ -84,6 +85,9 @@
                             <p><strong>Placa:</strong> ${v.placa}</p>
                             <p><strong>Chassi:</strong> ${v.chassi}</p>
                             <a href="#" class="btn btn-details">Ver Detalhes</a>
+                 
+                            <a href="AdicionarCarrinho?idVeiculo=${v.idVeiculo}&quantidade=1" class="btn btn-details">Adicionar ao carrinho</a>
+                            
                         </div>
                         <% if (isAdmin) { %>
                         <div class="admin-buttons">
