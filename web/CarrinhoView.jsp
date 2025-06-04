@@ -46,6 +46,7 @@
                     <li><a href="index.jsp">Início</a></li>
                     <li><a href="ListaVeiculo">Catálogo</a></li>
                     <li><a href="CarrinhoView.jsp">Carrinho</a></li> 
+                    <li><a href="PedidosView.jsp">Pedidos</a></li>
                     <li><a href="sobre.jsp">Sobre Nós</a></li>
                     <li><a href="contato.jsp">Contato</a></li>
                     <li><a href="AltUsuario">Alterar dados</a></li>
@@ -114,7 +115,7 @@
             <section class="total-carrinho">
                 <h2>Total da Compra: R$<%= String.format("%.2f", total) %></h2>
 
-                <form action="pagar" method="post">
+                <form action="pagamento" method="post">
                     <button type="submit" class="finalizarButton">
                         Finalizar Compra
                     </button>
