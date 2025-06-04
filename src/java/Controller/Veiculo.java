@@ -26,6 +26,8 @@ public class Veiculo {
     private int anoModelo;
     private String placa;
     private String chassi;
+    private String imagem;
+    private double preco;
 
     public int getIdVeiculo() {
         return idVeiculo;
@@ -137,6 +139,22 @@ public class Veiculo {
 
     public void setChassi(String chassi) {
         this.chassi = chassi;
+    }
+
+    public String getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(String imagem) {
+        this.imagem = imagem;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
     
     

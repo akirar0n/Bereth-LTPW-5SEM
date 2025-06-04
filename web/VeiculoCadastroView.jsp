@@ -23,9 +23,10 @@
                 <ul class="nav-links">
                     <li><a href="index.jsp">Início</a></li>
                     <li><a href="VeiculoListaView.jsp">Catálogo</a></li>
+                    <li><a href="CarrinhoView.jsp">Carrinho</a></li> 
                     <li><a href="sobre.jsp">Sobre Nós</a></li>
                     <li><a href="contato.jsp">Contato</a></li>
-                    <li><a href="UsuarioAlterarView.jsp">Alterar dados</a></li>
+                    <li><a href="AltUsuario">Alterar dados</a></li>
                 </ul>
                 <div class="nav-auth-buttons">
                     <%
@@ -70,6 +71,16 @@
                             <option value="Moto">Moto</option>
 
                         </select>
+                    </div>
+                    
+                    <div class="textfield">
+                        <label for="imagem">Imagem:</label>
+                        <input type="text" id="imagem" name="imagem" placeholder="Link da imagem" required>
+                    </div>
+                    
+                    <div class="textfield">
+                        <label for="preco">Preço:</label>
+                        <input type="text" id="preco" name="preco" placeholder="Preço do veículo" required>
                     </div>
 
                     <div class="textfield">

@@ -4,22 +4,23 @@
  */
 package Bean;
 
-import Controller.Veiculo;
-import Enuns.CategoriaVeiculo;
-import Model.ManterVeiculo;
-import jakarta.servlet.RequestDispatcher;
+import Controller.Carrinho;
+import Model.ManterCarrinho;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  *
- * @author thiagosilva
+ * @author bryan
  */
-public class VeiculoCadastroServlet extends HttpServlet {
+@WebServlet(name = "AdicionarCarrinhoServlet", urlPatterns = {"/AdicionarCarrinho"})
+public class AdicionarCarrinhoServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,40 +34,39 @@ public class VeiculoCadastroServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            int idVeiculo = Integer.parseInt(request.getParameter("idVeiculo"));
+            int quantidade = Integer.parseInt(request.getParameter("quantidade"));
+            // 2. Recupera id do cliente da sessão
+            HttpSession session = request.getSession(false);
+            Integer idUsuario = (Integer) session.getAttribute("idUsuario");
 
-        try {
-            Veiculo veiculo = new Veiculo();
-            veiculo.setCategoriaVeiculo(CategoriaVeiculo.fromString(request.getParameter("categoriaVeiculo")));
-            veiculo.setMarca(request.getParameter("marca"));
-            veiculo.setModelo(request.getParameter("modelo"));
-            veiculo.setCor(request.getParameter("cor"));
-            veiculo.setRodas(Integer.parseInt(request.getParameter("rodas")));
-            veiculo.setMotorizacao(Float.parseFloat(request.getParameter("motorizacao")));
-            veiculo.setPesoKg(Float.parseFloat(request.getParameter("pesoKg")));
-            veiculo.setCapacidadeTanque(Float.parseFloat(request.getParameter("capacidadeTanque")));
-            veiculo.setAssentos(Integer.parseInt(request.getParameter("assentos")));
-            veiculo.setAnoFabricacao(Integer.parseInt(request.getParameter("anoFabricacao")));
-            veiculo.setAnoModelo(Integer.parseInt(request.getParameter("anoModelo")));
-            veiculo.setPlaca(request.getParameter("placa"));
-            veiculo.setChassi(request.getParameter("chassi"));
-            veiculo.setImagem(request.getParameter("imagem"));
-            veiculo.setPreco(Double.parseDouble(request.getParameter("preco")));
-
-            ManterVeiculo veiculoDao = new ManterVeiculo();
-            boolean inseridoComSucesso = veiculoDao.inserirVeiculo(veiculo);
-
-            if (inseridoComSucesso) {
-                request.setAttribute("mensagemSucesso", "Veículo cadastrado com sucesso!");
-            } else {
-                request.setAttribute("mensagemErro", "Não foi possível cadastrar o veículo. Tente novamente.");
+            if (idUsuario == null) {
+                response.sendRedirect("UsuarioLoginView.jsp"); // Redireciona se o usuário não estiver logado
+                return;
             }
+
+            Carrinho carrinho = new Carrinho();
+            carrinho.setIdVeiculo(idVeiculo);
+            carrinho.setIdUsuario(idUsuario);
+            carrinho.setQuantidade(quantidade);
+
+            // 3. Adiciona ao carrinho usando o DAO
+            ManterCarrinho dao = new ManterCarrinho();
+            dao.adicionarAoCarrinho(carrinho);
+
+            // 4. Redireciona para a página do carrinho (ou página de produtos)
+            response.sendRedirect("CarrinhoView.jsp");
+
         } catch (Exception e) {
-            request.setAttribute("mensagemErro", "Erro ao cadastrar veículo: " + e.getMessage());
             e.printStackTrace();
+            request.setAttribute("erro", "Erro ao adicionar ao carrinho: " + e.getMessage());
+            request.getRequestDispatcher("erro.jsp").forward(request, response);
         }
 
-        request.getRequestDispatcher("ListaVeiculo").forward(request, response);
     }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -108,3 +108,4 @@ public class VeiculoCadastroServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+

@@ -19,8 +19,8 @@ public class ManterVeiculo extends DAO {
     public boolean inserirVeiculo(Veiculo veiculo) throws Exception {
         try {
             abrirBanco();
-            String sql = "INSERT INTO veiculo (categoria, marca, modelo, cor, rodas, motorizacao, pesoKg, capacidadeTanqueL, assentos, anoFabricacao, anoModelo, placa, chassi) "
-                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO veiculo (categoria, marca, modelo, cor, rodas, motorizacao, pesoKg, capacidadeTanqueL, assentos, anoFabricacao, anoModelo, placa, chassi, preco, imagem) "
+                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             pst = con.prepareStatement(sql);
             pst.setString(1, veiculo.getCategoriaVeiculo().name());
             pst.setString(2, veiculo.getMarca());
@@ -35,6 +35,10 @@ public class ManterVeiculo extends DAO {
             pst.setInt(11, veiculo.getAnoModelo());
             pst.setString(12, veiculo.getPlaca());
             pst.setString(13, veiculo.getChassi());
+            pst.setDouble(14, veiculo.getPreco());
+            pst.setString(15, veiculo.getImagem());
+            System.out.println("Imagem recebida: " + veiculo.getImagem());
+            System.out.println("Preço: " + veiculo.getPreco());
 
             int linhasAfetadas = pst.executeUpdate();
 
@@ -77,6 +81,8 @@ public class ManterVeiculo extends DAO {
                 v.setAnoModelo(rs.getInt("anoModelo"));
                 v.setPlaca(rs.getString("placa"));
                 v.setChassi(rs.getString("chassi"));
+                v.setImagem(rs.getString("imagem"));
+                v.setPreco(rs.getDouble("preco"));
                 lista.add(v);
             }
             fecharBanco();
@@ -91,7 +97,7 @@ public class ManterVeiculo extends DAO {
         try {
             Veiculo veiculo = new Veiculo();
             abrirBanco();
-            String query = "SELECT idVeiculo, categoria, marca, modelo, cor, rodas, motorizacao, pesoKg, capacidadeTanque, assentos, anoFabricacao, anoModelo, placa, chassi FROM veiculo WHERE idVeiculo = ?";
+            String query = "SELECT idVeiculo, categoria, marca, modelo, cor, rodas, motorizacao, pesoKg, capacidadeTanque, assentos, anoFabricacao, anoModelo, placa, chassi, preco, imagem FROM veiculo WHERE idVeiculo = ?";
             pst = con.prepareStatement(query);
             pst.setInt(1, idVeiculo);
             ResultSet rs = pst.executeQuery();
@@ -118,6 +124,8 @@ public class ManterVeiculo extends DAO {
                 veiculo.setAnoModelo(rs.getInt("anoModelo"));
                 veiculo.setPlaca(rs.getString("placa"));
                 veiculo.setChassi(rs.getString("chassi"));
+                veiculo.setImagem(rs.getString("imagem"));
+                veiculo.setPreco(rs.getDouble("preco"));
 
                 return veiculo;
             }

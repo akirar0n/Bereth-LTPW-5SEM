@@ -22,7 +22,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Catálogo de Veículos - Agiliza Veículos</title>
+    <title>Catálogo de Veículos - Bereth</title>
     <link rel="icon" type="image/x-icon" href="assets/img/antonios-logo.png">
     <link rel="stylesheet" href="assets/style/VeiculoListaView.css"/>
 </head>
@@ -31,14 +31,15 @@
 <header>
     <nav class="navbar">
         <div class="logo">
-            <a href="index.jsp">Agiliza Veículos</a>
+            <a href="index.jsp">Bereth</a>
         </div>
         <ul class="nav-links">
             <li><a href="index.jsp">Início</a></li>
             <li><a href="VeiculoListaView.jsp">Catálogo</a></li> 
+            <li><a href="CarrinhoView.jsp">Carrinho</a></li> 
             <li><a href="sobre.jsp">Sobre Nós</a></li>
             <li><a href="contato.jsp">Contato</a></li>
-            <li><a href="UsuarioAlterarView.jsp">Alterar dados</a></li>
+            <li><a href="AltUsuario">Alterar dados</a></li>
         </ul>
         <div class="nav-auth-buttons">
             <% if (logado) { %>
@@ -69,10 +70,11 @@
                 <c:forEach var="v" items="${veiculos}">
                     <div class="vehicle-card">
                         <div class="card-image">
-                            <img src="assets/img/default-car.png" alt="${v.modelo}">
+                            <img src="${v.imagem}" alt="${v.modelo}">
                         </div>
                         <div class="card-details">
                             <h3>${v.marca} ${v.modelo}</h3>
+                            <p><strong>Preço:</strong> R$ ${v.preco}</p>
                             <p><strong>Categoria:</strong> ${v.categoriaVeiculo}</p>
                             <p><strong>Cor:</strong> ${v.cor}</p>
                             <p><strong>Motorização:</strong> ${v.motorizacao} L</p>
@@ -83,6 +85,9 @@
                             <p><strong>Placa:</strong> ${v.placa}</p>
                             <p><strong>Chassi:</strong> ${v.chassi}</p>
                             <a href="#" class="btn btn-details">Ver Detalhes</a>
+                 
+                            <a href="AdicionarCarrinho?idVeiculo=${v.idVeiculo}&quantidade=1" class="btn btn-details">Adicionar ao carrinho</a>
+                            
                         </div>
                         <% if (isAdmin) { %>
                         <div class="admin-buttons">
