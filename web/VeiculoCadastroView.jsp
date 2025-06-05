@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cadastrar Veículo - Agiliza Veículos</title>
+        <title>Cadastrar Veículo - Bereth</title>
         <link rel="icon" type="image/x-icon" href="assets/img/antonios-logo.png">
         <link rel="stylesheet" href="assets/style/index.css"/> 
         <link rel="stylesheet" href="assets/style/VeiculoCadastroView.css"/>
@@ -18,12 +18,13 @@
         <header>
             <nav class="navbar">
                 <div class="logo">
-                    <a href="index.jsp">Agiliza Veículos</a>
+                    <a href="index.jsp">Bereth</a>
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.jsp">Início</a></li>
                     <li><a href="VeiculoListaView.jsp">Catálogo</a></li>
                     <li><a href="CarrinhoView.jsp">Carrinho</a></li> 
+                    <li><a href="PedidosView.jsp">Pedidos</a></li>
                     <li><a href="sobre.jsp">Sobre Nós</a></li>
                     <li><a href="contato.jsp">Contato</a></li>
                     <li><a href="AltUsuario">Alterar dados</a></li>

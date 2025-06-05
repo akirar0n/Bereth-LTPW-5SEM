@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Alterar Dados do Usuário - Agiliza Veículos</title>
+        <title>Alterar Dados do Usuário - Bereth</title>
         <link rel="icon" type="image/x-icon" href="assets/img/antonios-logo.png">
         <link rel="stylesheet" href="assets/style/index.css"/>
         <link rel="stylesheet" href="assets/style/VeiculoCadastroView.css"/>
@@ -22,12 +22,13 @@
             <nav class="navbar">
                 <div class="logo">
                     <img src="assets/img/antonios-logo.png" alt="logotipo" width="50px" height="50px" /> <%-- Adicionado a imagem do logo que faltava --%>
-                    <a href="index.jsp">Agiliza Veículos</a>
+                    <a href="index.jsp">Bereth</a>
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.jsp">Início</a></li>
                     <li><a href="ListaVeiculo">Catálogo</a></li> <%-- Mudei para ListaVeiculo, que parece ser o Servlet para o catálogo --%>
                     <li><a href="CarrinhoView.jsp">Carrinho</a></li> 
+                    <li><a href="PedidosView.jsp">Pedidos</a></li>
                     <li><a href="sobre.jsp">Sobre Nós</a></li>
                     <li><a href="contato.jsp">Contato</a></li>
                     <li><a href="AltUsuario">Alterar dados</a></li> 

@@ -18,12 +18,13 @@
             <nav class="navbar">
                 <div class="logo">
                     <img src="assets/img/antonios-logo.png" alt="logotipo" width="50px" height="50px" />
-                    <a href="index.jsp">Agiliza Veículos</a>
+                    <a href="index.jsp">Bereth</a>
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.jsp">Início</a></li>
                     <li><a href="ListaVeiculo">Catálogo</a></li>
-                    <li><a href="CarrinhoView.jsp">Carrinho</a></li>                  
+                    <li><a href="CarrinhoView.jsp">Carrinho</a></li>
+                    <li><a href="PedidosView.jsp">Pedidos</a></li> 
                     <li><a href="sobre.jsp">Sobre Nós</a></li>
                     <li><a href="contato.jsp">Contato</a></li>
                     <li><a href="AltUsuario">Alterar dados</a></li>
@@ -89,7 +90,7 @@
             </section>
 
             <section class="about-promo">
-                <h2>Sobre a Agiliza Veículos</h2>
+                <h2>Sobre a Bereth</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 <a href="sobre.jsp" class="btn btn-secondary">Saiba Mais</a>
             </section>
@@ -97,7 +98,7 @@
         </main>
 
         <footer>
-            <p>&copy; 2025 Agiliza Veículos. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Bereth. Todos os direitos reservados.</p>
         </footer>
     </body>
 </html>
